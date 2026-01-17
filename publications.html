@@ -1,123 +1,265 @@
-// ---- Rux Lab publications (from the PubMed links you provided) ----
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publications | Rux Lab</title>
+
+<style>
+:root{
+  --accent:#b03060;        /* dark pink */
+  --text:#1a1a1a;
+  --muted:#555;
+  --border:#e5e5e5;
+  --bg:#ffffff;
+  --max:900px;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+}
+
+a{
+  color:var(--accent);
+  text-decoration:none;
+}
+a:hover{ text-decoration:underline; }
+
+/* ---------- Header ---------- */
+header{
+  border-bottom:1px solid var(--border);
+}
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:18px 20px;
+}
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:14px;
+}
+.brand{
+  font-weight:700;
+  font-size:18px;
+}
+.menu{
+  list-style:none;
+  display:flex;
+  gap:18px;
+  padding:0;
+  margin:0;
+}
+.menu a{
+  color:var(--text);
+  font-weight:500;
+}
+.menu a[aria-current="page"]{
+  color:var(--accent);
+}
+
+/* ---------- Main ---------- */
+main{
+  padding:36px 0 56px;
+}
+h1{
+  margin:0 0 12px;
+  font-size:30px;
+}
+.scholar-link{
+  display:inline-block;
+  margin-bottom:28px;
+  font-size:15px;
+}
+
+/* ---------- Publications ---------- */
+.pubs{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.pub{
+  padding:18px 0;
+  border-bottom:1px solid var(--border);
+}
+.pub:last-child{ border-bottom:none; }
+
+.pub-title{
+  font-weight:600;
+  font-size:17px;
+  margin:0 0 6px;
+}
+.pub-meta{
+  margin:0 0 6px;
+  color:var(--muted);
+  font-size:15px;
+}
+.pub-links a{
+  font-size:14px;
+  margin-right:12px;
+}
+
+/* ---------- Footer ---------- */
+footer{
+  border-top:1px solid var(--border);
+  margin-top:48px;
+  font-size:14px;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="brand"><a href="index.html">Rux Lab</a></div>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="publications.html" aria-current="page">Publications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Publications</h1>
+
+    <a class="scholar-link"
+       href="https://scholar.google.com/citations?user=X9bniz0AAAAJ"
+       target="_blank" rel="noopener">
+      View full list on Google Scholar →
+    </a>
+
+    <ul id="pubList" class="pubs"></ul>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> Rux Lab · UConn Health
+  </div>
+</footer>
+
+<script>
 const publications = [
   {
     title: "Integrating spatial and single-cell transcriptomics to characterize mouse long bone fracture healing process",
     authors: "Wang H#, He X#, Ma M#, Dou T, Wei Y, Rux D, Qin L, Yang Y, Zhu Y, Yao L, et al.",
-    venue: "Commun Biol",
-    year: "2025",
-    links: [
-      { label: "[PubMed]", url: "https://pubmed.ncbi.nlm.nih.gov/40483363/" },
-      { label: "[DOI]", url: "https://doi.org/10.1038/s42003-025-08316-0" },
-    ],
+    journal: "Communications Biology",
+    year: 2025,
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/40483363/"
   },
   {
     title: "The methylomic landscape of human articular cartilage development contains epigenetic signatures of osteoarthritis risk",
-    authors: "McDonnell E, Orr SE, Barter MJ, Rux D, Brumwell A, Wrobel N, Murphy L, Overman LM, Sorial AK, Young DA, Soul J, Rice SJ, et al.",
-    venue: "Am J Hum Genet",
-    year: "2024",
-    links: [
-      { label: "[PubMed]", url: "https://pubmed.ncbi.nlm.nih.gov/39579763/" },
-      { label: "[DOI]", url: "https://doi.org/10.1016/j.ajhg.2024.10.017" },
-    ],
+    authors: "McDonnell E, Orr SE, Barter MJ, Rux D, et al.",
+    journal: "American Journal of Human Genetics",
+    year: 2024,
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/39579763/"
   },
   {
     title: "Impaired glucose metabolism underlies articular cartilage degeneration in osteoarthritis",
-    authors: "Li K, Ji X, Seeley R, Lee W-C, Shi Y, Song F, Liao X, Song C, Huang X, Rux D, Cao J, Luo X, Anderson SM, Huang W, Long F, et al.",
-    venue: "FASEB J",
-    year: "2022",
-    links: [
-      { label: "[PubMed]", url: "https://pubmed.ncbi.nlm.nih.gov/35608871/" },
-      { label: "[DOI]", url: "https://doi.org/10.1096/fj.202200485R" },
-    ],
+    authors: "Li K, Ji X, Seeley R, et al., Rux D",
+    journal: "FASEB Journal",
+    year: 2022,
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/35608871/"
   },
   {
-    title: "Primary Cilia Direct Murine Articular Cartilage Tidemark Patterning Through Hedgehog Signaling and Ambulatory Load",
-    authors: "Rux D, Helbig K, Han B, Cortese C, Koyama E, Han L, Pacifici M",
-    venue: "J Bone Miner Res",
-    year: "2022",
-    links: [
-      { label: "[PubMed]", url: "https://pubmed.ncbi.nlm.nih.gov/35060644/" },
-      { label: "[DOI]", url: "https://doi.org/10.1002/jbmr.4506" },
-    ],
+    title: "Primary cilia direct murine articular cartilage tidemark patterning through Hedgehog signaling and ambulatory load",
+    authors: "Rux D, Helbig K, Han B, et al.",
+    journal: "Journal of Bone and Mineral Research",
+    year: 2022,
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/35060644/"
   },
   {
-    title: "SOX9 keeps growth plates and articular cartilage healthy by inhibiting chondrocyte dedifferentiation/osteoblastic redifferentiation",
-    authors: "Haseeb A, Kc R, Angelozzi M, de Charleroy C, Rux D, Tower RJ, Yao L, Pellegrino da Silva R, Pacifici M, Qin L, Lefebvre V, et al.",
-    venue: "Proc Natl Acad Sci U S A",
-    year: "2021",
-    links: [
-      { label: "[PubMed]", url: "https://pubmed.ncbi.nlm.nih.gov/33597301/" },
-      { label: "[DOI]", url: "https://doi.org/10.1073/pnas.2019152118" },
-    ],
+    title: "SOX9 keeps growth plates and articular cartilage healthy by inhibiting chondrocyte dedifferentiation",
+    authors: "Haseeb A, Kc R, Angelozzi M, Rux D, et al.",
+    journal: "PNAS",
+    year: 2021,
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/33597301/"
   },
   {
-    title: "Premature Growth Plate Closure Caused by a Hedgehog Cancer Drug Is Preventable by Co-Administration of a Retinoid Antagonist in Mice",
-    authors: "Koyama E, Mundy C, Saunders C, Chung J, Catheline SE, Rux D, Iwamoto M, Pacifici M, et al.",
-    venue: "J Bone Miner Res",
-    year: "2021",
-    links: [
-      { label: "[PubMed]", url: "https://pubmed.ncbi.nlm.nih.gov/33724538/" },
-      { label: "[DOI]", url: "https://doi.org/10.1002/jbmr.4291" },
-    ],
+    title: "Premature growth plate closure caused by a Hedgehog cancer drug is preventable by co-administration of a retinoid antagonist",
+    authors: "Koyama E, Mundy C, Rux D, et al.",
+    journal: "Journal of Bone and Mineral Research",
+    year: 2021,
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/33724538/"
   },
   {
-    title: "Hox11 expression characterizes developing zeugopod synovial joints and is coupled to postnatal articular cartilage morphogenesis into functional zones in mice",
+    title: "Hox11 expression characterizes developing zeugopod synovial joints",
     authors: "Rux D, Helbig K, Koyama E, Pacifici M",
-    venue: "Dev Biol",
-    year: "2021",
-    links: [
-      { label: "[PubMed]", url: "https://pubmed.ncbi.nlm.nih.gov/34010606/" },
-      { label: "[DOI]", url: "https://doi.org/10.1016/j.ydbio.2021.05.007" },
-    ],
+    journal: "Developmental Biology",
+    year: 2021,
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/34010606/"
   },
   {
     title: "Joints in the appendicular skeleton: Developmental mechanisms and evolutionary influences",
     authors: "Rux D, Decker RS, Koyama E, Pacifici M",
-    venue: "Curr Top Dev Biol",
-    year: "2019",
-    links: [
-      { label: "[PubMed]", url: "https://pubmed.ncbi.nlm.nih.gov/30902250/" },
-      { label: "[DOI]", url: "https://doi.org/10.1016/bs.ctdb.2018.11.002" },
-    ],
+    journal: "Current Topics in Developmental Biology",
+    year: 2019,
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/30902250/"
+  },
+  {
+    title: "Hox11 function is required for region-specific fracture repair",
+    authors: "Rux DR, Song JY, et al.",
+    journal: "Journal of Bone and Mineral Research",
+    year: 2017,
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/28470721/"
   },
   {
     title: "Hox11 genes in the adult skeleton: Novel functions beyond embryonic development",
     authors: "Rux DR, Wellik DM",
-    venue: "Dev Dyn",
-    year: "2017",
-    links: [
-      { label: "[PubMed]", url: "https://pubmed.ncbi.nlm.nih.gov/28026082/" },
-      { label: "[DOI]", url: "https://doi.org/10.1002/dvdy.24482" },
-    ],
+    journal: "Developmental Dynamics",
+    year: 2017,
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/28026082/"
   },
   {
-    title: "Hox11 Function Is Required for Region-Specific Fracture Repair",
-    authors: "Rux DR, Song JY, Pineault KM, Mandair GS, Swinehart IT, Schlientz AJ, Garthus KN, Goldstein SA, Kozloff KM, Wellik DM, et al.",
-    venue: "J Bone Miner Res",
-    year: "2017",
-    links: [
-      { label: "[PubMed]", url: "https://pubmed.ncbi.nlm.nih.gov/28470721/" },
-      { label: "[DOI]", url: "https://doi.org/10.1002/jbmr.3166" },
-    ],
-  },
-  {
-    title: "Regionally Restricted Hox Function in Adult Bone Marrow Multipotent Mesenchymal Stem/Stromal Cells",
-    authors: "Rux DR, Song JY, Swinehart IT, Pineault KM, Schlientz AJ, Trulik KG, Goldstein SA, Kozloff KM, Lucas D, Wellik DM, et al.",
-    venue: "Dev Cell",
-    year: "2016",
-    links: [
-      { label: "[PubMed]", url: "https://pubmed.ncbi.nlm.nih.gov/27939685/" },
-      { label: "[DOI]", url: "https://doi.org/10.1016/j.devcel.2016.11.008" },
-    ],
+    title: "Regionally restricted Hox function in adult bone marrow mesenchymal stem cells",
+    authors: "Rux DR, Song JY, et al.",
+    journal: "Developmental Cell",
+    year: 2016,
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/27939685/"
   },
   {
     title: "HoxA3 is an apical regulator of haemogenic endothelium",
-    authors: "Iacovino M, Chong D, Szatmari I, Hartweck L, Rux D, Caprioli A, Cleaver O, Kyba M",
-    venue: "Nat Cell Biol",
-    year: "2011",
-    links: [
-      { label: "[PubMed]", url: "https://pubmed.ncbi.nlm.nih.gov/21170035/" },
-      { label: "[DOI]", url: "https://doi.org/10.1038/ncb2137" },
-    ],
-  },
+    authors: "Iacovino M, Chong D, Rux D, et al.",
+    journal: "Nature Cell Biology",
+    year: 2011,
+    pubmed: "https://pubmed.ncbi.nlm.nih.gov/21170035/"
+  }
 ];
+
+// Sort newest first
+publications.sort((a,b)=>b.year-a.year);
+
+const ul = document.getElementById("pubList");
+publications.forEach(p=>{
+  const li=document.createElement("li");
+  li.className="pub";
+  li.innerHTML = `
+    <p class="pub-title">${p.title}</p>
+    <p class="pub-meta">${p.authors}. <em>${p.journal}</em>. ${p.year}.</p>
+    <div class="pub-links">
+      <a href="${p.pubmed}" target="_blank" rel="noopener">[PubMed]</a>
+    </div>`;
+  ul.appendChild(li);
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

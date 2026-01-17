@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rux Lab | Research</title>
-  <meta name="description" content="Research in the Rux Lab: synovial joint development, articular cartilage morphogenesis, and osteoarthritis mechanisms." />
+  <meta name="description" content="Research in the Rux Lab: synovial joint development, articular cartilage morphogenesis, and osteoarthritis." />
 
   <style>
     :root{
@@ -48,10 +48,10 @@
       flex-wrap:wrap;
       gap:14px;
     }
-  .brand{
-    font-weight:700;
-    font-size:32px;
-    color:var(--accent);
+    .brand{
+      font-size:24px;        /* larger lab name */
+      font-weight:700;
+      color:var(--accent);  /* dark pink */
     }
     .menu{
       list-style:none;
@@ -69,7 +69,6 @@
     }
 
     /* ---------- Page content ---------- */
-    h1{ margin-bottom:6px; }
     .lede{
       color:var(--muted);
       font-size:18px;
@@ -77,23 +76,32 @@
     }
 
     .section{
-      margin-top:18px;
-      padding-top:4px;
+      margin-top:20px;
+      padding-top:8px;
+      border-top:1px solid #f0f0f0;
     }
     .section h2{
-      margin:0 0 8px;
+      margin:10px 0 8px;
       font-size:20px;
     }
     .section p{
-      margin:0 0 10px;
+      margin:8px 0;
+    }
+    .kicker{
+      display:inline-block;
+      font-size:12px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:6px;
     }
 
-    .grid{
+    /* Cards */
+    .cards{
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
       gap:14px;
-      margin:14px 0 18px;
-      align-items:start;
+      margin:12px 0 6px;
     }
     .card{
       border:1px solid var(--border);
@@ -106,29 +114,40 @@
       font-size:16px;
     }
     .card p{
-      margin:0 0 10px;
-      color:#333;
-    }
-    .card ul{
       margin:0;
-      padding-left:18px;
       color:#333;
+      font-size:14px;
     }
 
-    figure{ margin:0; }
-    figure img{
+    /* Image + text row */
+    .feature{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+    @media (min-width: 720px){
+      .feature{
+        grid-template-columns: 320px 1fr;
+        gap:18px;
+      }
+    }
+    .feature img{
       width:100%;
       height:220px;
       object-fit:cover;
-      border-radius:6px;
+      border-radius:10px;
       display:block;
       background:#f2f2f2;
+      border:1px solid var(--border);
     }
-    figcaption{
-      margin-top:8px;
-      font-size:14px;
+    .bullets{
+      margin:10px 0 0;
+      padding-left:18px;
       color:#333;
     }
+    .bullets li{ margin:6px 0; }
 
     hr{
       border:0;
@@ -140,6 +159,20 @@
       font-size:14px;
       color:#444;
     }
+
+    .cta{
+      display:inline-block;
+      margin-top:8px;
+      padding:10px 12px;
+      border:1px solid var(--accent);
+      border-radius:10px;
+      color:var(--accent);
+      font-weight:600;
+    }
+    .cta:hover{
+      text-decoration:none;
+      background:rgba(176,48,96,.06);
+    }
   </style>
 </head>
 
@@ -147,7 +180,7 @@
   <div class="wrap">
     <header>
       <div class="nav">
-        <div class="brand">Rux Lab</div>
+        <a class="brand" href="index.html">Rux Lab</a>
 
         <nav aria-label="Primary">
           <ul class="menu">
@@ -164,100 +197,106 @@
     <main>
       <h1>Research</h1>
       <p class="lede">
-        The Rux Lab studies how developmental signaling programs build synovial joints and establish lifelong articular
-        cartilage structure—and how disruption of these programs contributes to osteoarthritis.
+        We study how developmental signaling programs build and maintain <strong>synovial joints</strong>—and how
+        disruptions in these programs contribute to <strong>osteoarthritis</strong>.
       </p>
 
-      <section class="grid" aria-label="Research overview">
-        <div class="card">
-          <h3>Synovial joint formation</h3>
-          <p>
-            We investigate how joint boundaries, synovial tissues, and surface specializations emerge during development.
-          </p>
-          <ul>
-            <li>Joint interzone and boundary specification</li>
-            <li>Synovium and lining cell development</li>
-            <li>Lubrication and surface protection programs</li>
-          </ul>
-        </div>
+      <section class="section" aria-labelledby="overview">
+        <span class="kicker">Overview</span>
+        <h2 id="overview">From development to lifelong tissue health</h2>
 
-        <div class="card">
-          <h3>Articular cartilage morphogenesis</h3>
-          <p>
-            We study how zonal architecture is established postnatally and maintained into adulthood.
-          </p>
-          <ul>
-            <li>Zonal patterning and maturation</li>
-            <li>Extracellular matrix assembly and remodeling</li>
-            <li>Mechanosensation and tissue organization</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Osteoarthritis mechanisms</h3>
-          <p>
-            We test how altered developmental pathways predispose cartilage to degeneration in injury and aging.
-          </p>
-          <ul>
-            <li>Post-traumatic and age-related OA models</li>
-            <li>Early molecular and cellular changes</li>
-            <li>Candidate protective and disease-driving pathways</li>
-          </ul>
+        <div class="feature">
+          <!-- Optional image: add something like assets/img/research-overview.jpg -->
+          <img src="assets/img/research-overview.jpg" alt="Articular cartilage and synovial joint tissues (placeholder image)" />
+          <div>
+            <p>
+              Synovial joints must form correctly during development, mature after birth, and remain durable under
+              decades of mechanical load. Our lab investigates how spatial and temporal signaling cues pattern
+              joint tissues (cartilage, synovium, and associated structures) and how altered signaling predisposes
+              joints to degeneration.
+            </p>
+            <ul class="bullets">
+              <li><strong>Development:</strong> how joints and their tissues are specified and patterned.</li>
+              <li><strong>Postnatal maturation:</strong> how articular cartilage architecture and zonation emerge.</li>
+              <li><strong>Disease:</strong> how dysregulated pathways drive osteoarthritis onset and progression.</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <section class="section" aria-label="Research themes">
-        <h2>Key themes</h2>
-        <p>
-          Our work connects developmental biology to musculoskeletal disease by focusing on how signaling gradients and
-          cell-state transitions shape cartilage form and function over time.
+      <section class="section" aria-labelledby="themes">
+        <span class="kicker">Research themes</span>
+        <h2 id="themes">What we work on</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Synovial joint development</h3>
+            <p>
+              How joint boundaries and synovial tissues are patterned, and how early developmental decisions influence
+              tissue organization later in life.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Articular cartilage morphogenesis</h3>
+            <p>
+              Mechanisms that build postnatal cartilage architecture, including zonal organization and transitions
+              that support long-term function.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Osteoarthritis pathogenesis</h3>
+            <p>
+              How disrupted signaling and tissue architecture contribute to degeneration, with the goal of identifying
+              actionable nodes for prevention or repair.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="approaches">
+        <span class="kicker">Approaches</span>
+        <h2 id="approaches">How we do it</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Genetics & mouse models</h3>
+            <p>
+              Tissue- and time-specific perturbations to test how developmental pathways shape postnatal cartilage and joint health.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Histology & spatial biology</h3>
+            <p>
+              Quantitative tissue phenotyping, molecular localization, and spatial readouts to connect signaling to structure.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Transcriptomics</h3>
+            <p>
+              Bulk and single-cell/-nucleus strategies to map pathway states across time, space, and disease.
+            </p>
+          </article>
+        </div>
+
+        <p style="margin-top:10px;">
+          Interested in the details? See our <a href="publications.html">Publications</a> for recent work and themes.
         </p>
-        <div class="grid">
-          <div class="card">
-            <h3>Developmental signaling in adult tissue</h3>
-            <p>
-              We ask how pathways best known for development are tuned (“not too high, not too low”) to maintain adult
-              articular cartilage integrity.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Spatial organization</h3>
-            <p>
-              We map where signals act in the joint and how spatial patterning relates to zonal identity, matrix features,
-              and mechanical load.
-            </p>
-          </div>
-          <div class="card">
-            <h3>From mechanism to disease vulnerability</h3>
-            <p>
-              We test how perturbations in these programs change injury responses and long-term outcomes relevant to OA.
-            </p>
-          </div>
-        </div>
       </section>
 
-      <section class="section" aria-label="Images">
-        <h2>Research highlights</h2>
-
-        <div class="grid">
-          <figure>
-            <!-- Put an image at: /assets/img/research-1.jpg -->
-            <img src="assets/img/research-1.jpg" alt="Synovial joint development (placeholder image)" />
-            <figcaption><strong>Joint formation</strong>: patterning synovial tissues and joint boundaries.</figcaption>
-          </figure>
-
-          <figure>
-            <!-- Put an image at: /assets/img/research-2.jpg -->
-            <img src="assets/img/research-2.jpg" alt="Articular cartilage zonation (placeholder image)" />
-            <figcaption><strong>Cartilage architecture</strong>: postnatal morphogenesis and zonal organization.</figcaption>
-          </figure>
-
-          <figure>
-            <!-- Put an image at: /assets/img/research-3.jpg -->
-            <img src="assets/img/research-3.jpg" alt="Osteoarthritis mechanisms (placeholder image)" />
-            <figcaption><strong>Osteoarthritis</strong>: mechanisms and models of degeneration and repair.</figcaption>
-          </figure>
-        </div>
+      <section class="section" aria-labelledby="join">
+        <span class="kicker">Join us</span>
+        <h2 id="join">Opportunities</h2>
+        <p>
+          We’re always excited to meet motivated trainees who enjoy developmental biology, tissue organization, and
+          mechanistic questions with biomedical relevance.
+        </p>
+        <p>
+          <a class="cta" href="contact.html">Contact the lab</a>
+        </p>
       </section>
 
       <hr />

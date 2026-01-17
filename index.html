@@ -6,84 +6,106 @@
   <title>Rux Lab | Home</title>
   <meta name="description" content="The Rux Lab studies synovial joint development and disease, including articular cartilage morphogenesis and osteoarthritis." />
 
- <style>
-:root{
-  --accent:#b03060;        /* dark pink */
-  --text:#1a1a1a;
-  --muted:#555;
-  --border:#e5e5e5;
-  --bg:#ffffff;
-  --max:900px;
-}
-
-*{box-sizing:border-box;}
-
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  color:var(--text);
-  background:var(--bg);
-  line-height:1.6;
-}
-
-a{
-  color:var(--accent);
-  text-decoration:none;
-}
-a:hover{ text-decoration:underline; }
-
-/* ---------- Header ---------- */
-
-  <header>
-  <div class="nav">
-    <div class="brand">Rux Lab</div>
-
-    <nav aria-label="Primary">
-      <ul class="menu">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-   
-   /* Three image row */
-    .img-row{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin: 14px 0 18px;
-      align-items: start;
+  <style>
+    :root{
+      --accent:#b03060;        /* dark pink */
+      --text:#1a1a1a;
+      --muted:#555;
+      --border:#e5e5e5;
+      --bg:#ffffff;
+      --max:900px;
     }
-    figure{
+
+    *{box-sizing:border-box;}
+
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+    }
+
+    a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+    a:hover{ text-decoration:underline; }
+
+    /* ---------- Header ---------- */
+    header{
+      border-bottom:1px solid var(--border);
+    }
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 20px;
+    }
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+    .brand{
+      font-weight:700;
+      font-size:18px;
+      color:var(--text);
+    }
+    .menu{
+      list-style:none;
+      display:flex;
+      gap:18px;
+      padding:0;
       margin:0;
     }
+    .menu a{
+      color:var(--text);
+      font-weight:500;
+    }
+    .menu a[aria-current="page"]{
+      color:var(--accent);
+    }
+
+    /* ---------- Home content ---------- */
+    .lede{
+      color:var(--muted);
+      font-size:18px;
+      margin-top:6px;
+    }
+
+    /* Three image row */
+    .img-row{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:14px;
+      margin:14px 0 18px;
+      align-items:start;
+    }
+    figure{ margin:0; }
     figure img{
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 6px;
+      width:100%;
+      height:200px;
+      object-fit:cover;
+      border-radius:6px;
       display:block;
-      background: #f2f2f2;
+      background:#f2f2f2;
     }
     figcaption{
-      margin-top: 8px;
-      font-size: 14px;
+      margin-top:8px;
+      font-size:14px;
       color:#333;
     }
 
     hr{
-      border: 0;
-      border-top: 1px solid #e6e6e6;
-      margin: 18px 0 14px;
+      border:0;
+      border-top:1px solid #e6e6e6;
+      margin:18px 0 14px;
     }
 
     footer{
-      font-size: 14px;
+      font-size:14px;
       color:#444;
     }
   </style>
@@ -92,18 +114,19 @@ a:hover{ text-decoration:underline; }
 <body>
   <div class="wrap">
     <header>
-      <div class="site-title">Rux Lab</div>
+      <div class="nav">
+        <div class="brand">Rux Lab</div>
 
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+        <nav aria-label="Primary">
+          <ul class="menu">
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
@@ -116,19 +139,16 @@ a:hover{ text-decoration:underline; }
 
       <section class="img-row" aria-label="Research highlights">
         <figure>
-          <!-- Put an image at: /assets/img/research-1.jpg -->
           <img src="assets/img/research-1.jpg" alt="Synovial joint development (placeholder image)" />
           <figcaption><strong>Joint formation</strong>: patterning synovial tissues and joint boundaries.</figcaption>
         </figure>
 
         <figure>
-          <!-- Put an image at: /assets/img/research-2.jpg -->
           <img src="assets/img/research-2.jpg" alt="Articular cartilage zonation (placeholder image)" />
           <figcaption><strong>Cartilage architecture</strong>: postnatal morphogenesis and zonal organization.</figcaption>
         </figure>
 
         <figure>
-          <!-- Put an image at: /assets/img/research-3.jpg -->
           <img src="assets/img/research-3.jpg" alt="Osteoarthritis mechanisms (placeholder image)" />
           <figcaption><strong>Osteoarthritis</strong>: mechanisms and models of degeneration and repair.</figcaption>
         </figure>

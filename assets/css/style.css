@@ -76,6 +76,23 @@ header{
   color:var(--accent);
 }
 
+    <header>
+      <div class="nav">
+        <div class="brand">Rux Lab</div>
+
+        <nav aria-label="Primary">
+          <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="news.html" aria-current="page">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
 /* ---------- Sections ---------- */
 .section{
   margin-top:18px;

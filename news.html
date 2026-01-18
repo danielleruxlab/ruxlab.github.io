@@ -1,165 +1,70 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rux Lab | News</title>
-  <meta name="description" content="News and updates from the Rux Lab." />
+<ul class="news-list" aria-label="News posts">
 
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- NEWEST -->
+  <li class="news-item">
+    <img
+      class="news-thumb"
+      src="assets/img/news/recruiting.jpg"
+      alt="Recruiting trainees"
+    />
 
-  <style>
-    /* News-page-only styles (keeps the site CSS clean) */
-    .news-list{
-      list-style:none;
-      padding:0;
-      margin:14px 0 18px;
-      display:grid;
-      gap:14px;
-    }
-    .news-item{
-      border:1px solid var(--border);
-      border-radius:12px;
-      padding:14px;
-      background:#fff;
-    }
-    .news-item h2{
-      margin:0 0 6px;
-      font-size:18px;
-    }
-    .news-meta{
-      font-size:13px;
-      color:var(--muted);
-      margin:0 0 10px;
-    }
-    .tag{
-      display:inline-block;
-      border:1px solid var(--border);
-      border-radius:999px;
-      padding:2px 10px;
-      font-size:12px;
-      color:#333;
-      margin-left:8px;
-      vertical-align:middle;
-    }
-    .news-item{
-  display:grid;
-  grid-template-columns: 140px 1fr;
-  gap:14px;
-  align-items:start;
-}
-
-.news-thumb{
-  width:100%;
-  height:100px;
-  object-fit:cover;
-  border-radius:8px;
-  background:#f2f2f2;
-  display:block;
-}
-
-@media (max-width:600px){
-  .news-item{
-    grid-template-columns: 1fr;
-  }
-  .news-thumb{
-    height:180px;
-  }
-}
-  </style>
-</head>
-
-<body>
-  <div class="wrap">
-    <header>
-      <div class="nav">
-        <div class="brand">Rux Lab</div>
-
-        <nav aria-label="Primary">
-          <ul class="menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="news.html" aria-current="page">News</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <h1>News</h1>
-      <p class="lede">
-        Lab updates, announcements, and highlights. (Newest first.)
+    <div>
+      <h2>
+        Recruiting trainees for rotations and research experiences
+        <span class="tag">Opportunities</span>
+      </h2>
+      <p class="news-meta">
+        <time datetime="2026-01-10">January 10, 2026</time>
       </p>
+      <p>
+        Interested in joining the lab? We welcome motivated undergraduates, graduate student rotations, and postdocs.
+        See the <a href="contact.html">Contact</a> page for what to include when reaching out.
+      </p>
+    </div>
+  </li>
 
-      <ul class="news-list" aria-label="News posts">
-        <!-- Copy/paste a news-item and update date/title/text. -->
+  <li class="news-item">
+    <img
+      class="news-thumb"
+      src="assets/img/news/cartilage-zonation.jpg"
+      alt="Cartilage zonal organization"
+    />
 
-        <li class="news-item">
-  <img
-    class="news-thumb"
-    src="assets/img/news/lab-launch1.jpg"
-    alt="Rux Lab launch"
-  />
+    <div>
+      <h2>
+        Lab highlight: mapping cartilage zonal organization
+        <span class="tag">Research</span>
+      </h2>
+      <p class="news-meta">
+        <time datetime="2025-12-15">December 15, 2025</time>
+      </p>
+      <p>
+        We’re developing approaches to understand how developmental signaling programs shape postnatal articular cartilage
+        architecture and how these patterns relate to disease vulnerability.
+      </p>
+    </div>
+  </li>
 
-  <div>
-    <h2>
-      The Rux Lab is Born!
-      <span class="tag">Announcement</span>
-    </h2>
-    <p class="news-meta">
-      <time datetime="2023-11">November 2023</time>
-    </p>
-    <p>
-      We’re excited to share updates on our research here!
-    </p>
-  </div>
-</li>
+  <!-- OLDEST -->
+  <li class="news-item">
+    <img
+      class="news-thumb"
+      src="assets/img/news/lab-launch1.jpg"
+      alt="Rux Lab launch"
+    />
 
-        <li class="news-item">
-          <h2>
-            Recruiting trainees for rotations and research experiences
-            <span class="tag">Opportunities</span>
-          </h2>
-          <p class="news-meta">
-            <time datetime="2026-01-10">January 10, 2026</time>
-          </p>
-          <p>
-            Interested in joining the lab? We welcome motivated undergraduates, graduate student rotations, and postdocs.
-            See the <a href="contact.html">Contact</a> page for what to include when reaching out.
-          </p>
-        </li>
+    <div>
+      <h2>
+        The Rux Lab is Born!
+        <span class="tag">Announcement</span>
+      </h2>
+      <p class="news-meta">
+        <time datetime="2023-11">November 2023</time>
+      </p>
+      <p>
+        We’re excited to share updates on our research here!
+      </p>
+    </div>
+  </li>
 
-        <li class="news-item">
-          <h2>
-            Lab highlight: mapping cartilage zonal organization
-            <span class="tag">Research</span>
-          </h2>
-          <p class="news-meta">
-            <time datetime="2025-12-15">December 15, 2025</time>
-          </p>
-          <p>
-            We’re developing approaches to understand how developmental signaling programs shape postnatal articular cartilage
-            architecture and how these patterns relate to disease vulnerability.
-          </p>
-        </li>
-      </ul>
-
-      <hr />
-
-      <footer>
-        © <span id="year"></span> Danielle Rux Lab | Synovial Joint Development &amp; Disease
-      </footer>
-    </main>
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
-
-
-
+</ul>
